@@ -1,14 +1,23 @@
 [tool.poetry]
 name = "wikiwwii"
 version = "0.1.0"
-description = ""
+description = "scraper and processor for wikipedia WWII battles"
+license = "GNU"
 authors = ["Philipp Kats <casyfill@gmail.com>"]
+readme = 'README.md'
+
+repository = "https://github.com/Casyfill/wikiwwii"
+homepage = "https://github.com/Casyfill/wikiwwii"
+
+keywords = ['wiki', 'wwii', 'data']
 
 [tool.poetry.dependencies]
 python = "^3.7"
+requests = "^2.21.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
+beautifulsoup4 = "^4.71"
 
 [build-system]
 requires = ["poetry>=0.12"]
