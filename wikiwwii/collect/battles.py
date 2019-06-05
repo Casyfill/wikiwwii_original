@@ -75,6 +75,17 @@ def _additional(table):
         
     return result
 
+def _parse_page(dom):
+    table = dom.find('table','infobox vevent')  # info table
+    if table is None: # some campaigns don't have table
+        return {}  
+
+    data = _get_main_info(table)
+    
+    additional = _additional(table)
+    data.update(additional)
+    return data
+    
 
 def parse_battle_page(url):
     ''' main function to parse battle urls from wikipedia
@@ -84,18 +95,14 @@ def parse_battle_page(url):
     except Exception as e:
         warnings.warn(str(e))
         return {}
-
-
-    table = dom.find('table','infobox vevent')  # info table
-    if table is None: # some campaigns don't have table
-        return {}  
-
-    data = _get_main_info(table)
+    
+    data = _parse_page(dom)
     data['url'] = url  
     
-    additional = _additional(table)
-    data.update(additional)
     return data
+
+
+    
 
 
 
