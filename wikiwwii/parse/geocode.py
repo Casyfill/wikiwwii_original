@@ -71,7 +71,7 @@ def geocode_location(locColumn, replacements=LOC_REPLACEMENTS, errata=None):
         return {k:result[0][k] for k in ('lat', 'lon', 'importance', 'display_name')}
 
 
-    result = location.str.replace('\n', ' ').progress_apply(vectorized_geocode)
+    result = location.str.replace('\n', ' ').progress_apply(_vectorized_geocode)
     return pd.DataFrame(result.tolist(), index=locColumn.index)
 
 
