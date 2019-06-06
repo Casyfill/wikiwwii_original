@@ -20,7 +20,7 @@ pandas = "^0.24.2"
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
 pytest-cov = "^2.7"
-pytest-azurepipelines = "^0.6.0"
+pytest-azurepipelines = {version = "^0.6.0",extras = ["azure"]}
 
 [build-system]
 requires = ["poetry>=0.12"]
