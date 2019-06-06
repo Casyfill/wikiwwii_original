@@ -3,7 +3,7 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-trigger:
+pr:
 - master
 
 pool:
@@ -21,10 +21,12 @@ steps:
 
 - script: |
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+    source $HOME/.poetry/env
     poetry --version
-    poetry install
+    poetry install -E azure
   displayName: 'Install dependencies'
 
 - script: |
     poetry run pytest --cov=wikiwwii tests
   displayName: 'pytest'
+
