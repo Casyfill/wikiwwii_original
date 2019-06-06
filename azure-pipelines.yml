@@ -26,7 +26,7 @@ steps:
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
     source $HOME/.poetry/env
     poetry --version
-    poetry install -E azure
+    poetry install
   displayName: 'Install dependencies'
 
 - script: |
