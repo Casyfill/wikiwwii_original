@@ -23,12 +23,15 @@ steps:
   displayName: 'Use Python $(python.version)'
 
 - script: |
-    pip install --user poetry
+    curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+    source $HOME/.poetry/env
     poetry --version
     poetry install
   displayName: 'Install dependencies'
 
+
 - script: |
+    source $HOME/.poetry/env
     poetry run pytest --cov=wikiwwii tests
   displayName: 'pytest'
 
