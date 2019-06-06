@@ -3,7 +3,7 @@ import requests as rq
 from bs4 import BeautifulSoup
 import json
 
-base_url = 'https://en.wikipedia.org/wiki/List_of_World_War_II_battles'
+BASE_URL = 'https://en.wikipedia.org/wiki/List_of_World_War_II_battles'
 
 
 def _get_dom(url):
@@ -12,7 +12,7 @@ def _get_dom(url):
     return BeautifulSoup(response.content, 'html.parser')
 
 
-def collect_fronts(base_url=base_url):
+def collect_fronts(base_url=BASE_URL):
     '''collect links and names on all subjects in the table, 
     hierarchically
     '''
