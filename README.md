@@ -5,3 +5,24 @@ scraper and processor for wikipedia WWII battles
 
 ## Installation
 `pip install git+https://github.com/Casyfill/wikiwwii.git`
+
+
+wikiwwii
+├── README.md
+├── pyproject.toml
+├── tests
+│ ├── __init__.py
+│ └── test_wikiwwii.py
+└── wikiwwii
+  ├── __init__.py
+  ├── collect
+  │ ├── __init__.py
+  │ ├── battles.py
+  │ └── fronts.py
+  └── parse
+    ├── __init__.py
+    ├── bellengerets.py
+    ├── casualties.py
+    ├── dates.py
+    ├── geocode.py
+    └── qa.py
