@@ -7,6 +7,7 @@ scraper and processor for wikipedia WWII battles
 `pip install git+https://github.com/Casyfill/wikiwwii.git`
 
 
+```
 wikiwwii
 ├── README.md
 ├── pyproject.toml
@@ -26,3 +27,4 @@ wikiwwii
     ├── dates.py
     ├── geocode.py
     └── qa.py
+```
