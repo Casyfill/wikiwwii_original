@@ -63,9 +63,8 @@ SyntSeries = series(StrSintetic)
 
 
 @given(SyntSeries)
-@example(pd.Series(["", ""]))
 def test_parse_casualties_h(s):
     from wikiwwii.parse.casualties import _parse_casualties
 
     values = _parse_casualties(s)
-    assert (values.sum(1) > 0).all(), values.to_string()
+    assert (values.sum(1) > 0).all(), "\n\n" + values.to_string()
